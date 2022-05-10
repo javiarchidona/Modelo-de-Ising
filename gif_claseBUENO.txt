@@ -1,0 +1,11 @@
+unset key 
+set size square
+set xra[0:99]
+set yra[0:99]
+set palette gray 
+
+set output 'T_0,4(FINAL).gif'
+
+set term gif animate delay 5
+
+do for [b=0:800] {plot 'T_0,4(FINAL_WENO).txt' i b matrix with image}
